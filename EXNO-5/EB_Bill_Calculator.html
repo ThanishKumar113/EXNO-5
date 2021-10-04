@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EB Bill Calculator</title>
+</head>
+<script>
+    function f0(){
+      
+        var a= select.item[select.item.selectedIndex].text;
+      var c_units=document.getElementById("t2").value;
+      var result;
+
+              if(a=="Commercial"){
+                        if(c_units<=100){
+                              result=c_units*0+0;
+                              document.getElementById("ans").innerHTML =("Your Amount Rs: "+result);
+                        }else if(c_units<=200){
+                            result =(100*0)+((c_units-100)*10.50)+20.0;
+                            document.getElementById("ans").innerHTML =("Your Amount Rs: "+result);
+                        }else if(c_units<=500){
+                            result=(100*0)+(100*6.00)+((c_units-200)*13.00)+30;
+                            document.getElementById("ans").innerHTML =("Your Amount Rs: "+result);
+                        }else{
+                            result=(100*0)+(100*3.50)+(300*4.60)+((c_units-500)*15.60)+50;
+                            document.getElementById("ans").innerHTML =("Your Amount Rs: "+result);
+                        }
+
+                   
+              }
+        
+           var a= select.item[select.item.selectedIndex].text;
+           var c_units=document.getElementById("t2").value;
+           var result;
+
+                   if(a=="Domestic"){
+                             if(c_units<=100){
+                                   result=c_units*0+0;
+                                   document.getElementById("ans").innerHTML =("Your Amount Rs: "+result);
+                             }else if(c_units<=200){
+                                 result =(100*0)+((c_units-100)*1.50)+20.0;
+                                 document.getElementById("ans").innerHTML =("Your Amount Rs: "+result);
+                             }else if(c_units<=500){
+                                 result=(100*0)+(100*2.00)+((c_units-200)*3.00)+30;
+                                 document.getElementById("ans").innerHTML =("Your Amount Rs: "+result);
+                             }else{
+                                 result=(100*0)+(100*3.50)+(300*4.60)+((c_units-500)*6.60)+50;
+                                 document.getElementById("ans").innerHTML =("Your Amount Rs: "+result);
+                             }
+
+                        
+                   }
+                   
+                   
+                }
+</script>
+<body>
+        <br><br>   
+           
+    <section>
+        <div class="box">
+                          <h4 style="text-align: center; ">EB Bill Calculator</h4>
+            <br>
+            <form  style="margin-left: 200px;" name="select" >
+               <table width="80%">
+                   <tr>
+                        <td style="color: rgb(1, 1, 100); font-weight: bold;">Tariff Check</td> 
+                        <td> <select name="item"  onchange="f0()"  >
+                                <option value="Commercial">Commercial</option>
+                                <option value="Domestic">Domestic</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td style="color: rgb(1, 1, 100); font-weight: bold;">Consumer Units</td> 
+                        <td><input type="text" id="t2" placeholder="enter units"> </td>
+                    </tr>
+
+               </table>    
+            </form>
+             
+            <br><br>
+             <center><button id="btn1" onclick="f0()"> Calculate</button></center>
+
+             <br><br><br>
+             <div class="out">
+                <p id="ans" style="text-align: center;"></p>
+             </div>
+           
+    </section>
+</body>
+</html>
